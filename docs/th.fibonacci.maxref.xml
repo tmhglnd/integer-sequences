@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="th.fibonacci">
+
+	<digest>
+		Generate Fibonacci Numbers (OEIS A000045)
+	</digest>
+
+	<description>
+		OEIS: A000045.<br /><br />
+		An abstraction that generates the fibonacci sequence F(n) = F(n-1) + F(n-2). The ratio between consecutive numbers in the fibonacci sequence tends towards the Golden Ratio (1+√5)/2.<br /><br />
+
+		It uses the bignumber.js library to handle large integer numbers. The output is a list of strings to make sure the integers remain intact. Setting the second inlet to perform modulo operation on the sequence will switch the strings to a list of integers and give you the so called Pisano periods. Second outlet gives an integer for the length of the Pisano period, this length is 0 when the total list length is not long enough to find the length of the period. The first inlet will also give any nth-fibonacci of the sequence and output the bignumber as a list of single digit integers if @listmode = 0. Attribute @string will output the list as a string or broken down as signel digits. The fibonacci sequence is great for algorithmic composition. You can use it to generate melodies, rhyhtmic sequences, chords, or whatever you can think of. Here is a small examples to get you started.
+	</description>
+
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Timo Hoogland</metadata>
+		<metadata name="tag">thModules</metadata>
+		<metadata name="tag">data</metadata>
+		<metadata name="tag">list</metadata>
+		<metadata name="tag">integer</metadata>
+		<metadata name="tag">sequence</metadata>
+		<metadata name="tag">fibonacci</metadata>
+		<metadata name="tag">pell</metadata>
+	</metadatalist>
+
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="int">
+			<digest>Length of the list or nth-fibonacci</digest>
+		</inlet>
+		<inlet id="1" type="int">
+			<digest>Integer for modulo operation on list</digest>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="list">
+			<digest>List of sequence or nth-fibonacci as string or integers</digest>
+		</outlet>
+		<outlet id="1" type="int">
+			<digest>length of the pisano period if period is detected</digest>
+		</outlet>
+	</outletlist>
+
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg name="listlength" optional="1" type="int">
+			<digest>Set the length of the list to be output on a bang. The length can not be larger than the databaselength set with the @database attribute.</digest>
+		</objarg>
+		<objarg name="modulo" optional="1" type="int">
+			<digest>Set the modulo operation to generate the pisano period.</digest>
+		</objarg>
+	</objarglist>
+
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="bang">
+			<arglist>
+				<arg name="bang" optional="0" type="bang" />
+			</arglist>
+			<digest>
+				Output sequence/nth-fibonacci
+			</digest>
+			<description>
+				Output sequence/nth-fibonacci
+			</description>
+		</method>
+		<method name="int">
+			<arglist>
+				<arg name="int" optional="0" type="int" />
+			</arglist>
+			<digest>
+				Function depends on inlet
+			</digest>
+			<description>
+				Inlet 0 (hot): <br />
+				@listmode = 1: The amount of fibonacci numbers to output in a list of strings or integers. <br />
+				@listmode = 0: The nth-fibonacci number to output.
+				<br />
+				<br />
+				Inlet 1 (hot): The value that sets the modulo operation on the numbers. Must be greater than 1, otherwise not applied(default = 0).
+			</description>
+		</method>
+	</methodlist>
+
+	<!--ATTRIBUTES-->
+	<attributelist>
+		<attribute name='listmode' get='0' set='1' type='int' size='2' >
+			<digest>switch between sequence or nth-fibonacci</digest>
+			<description>
+				When listmode = 1: Output the sequence length specified. <br />
+				When listmode = 0: Output the nth-fibonacci number.
+			</description>
+		</attribute>
+
+		<attribute name='string' get='0' set='1' type='int' size='2' >
+			<digest>output as string</digest>
+			<description>
+				Output the nth fibonacci number as a string (default = 0).
+			</description>
+		</attribute>
+
+		<attribute name='database' get='0' set='1' type='int' size='2' >
+			<digest>change maximum length of database</digest>
+			<description>
+				Change the maximum length of the fibonacci sequence that is stored in the object as a database. A bigger dataset will instantiate the object slower, but allow for higher fibonacci values. Maximum length is 16384 (default = 128).
+			</description>
+		</attribute>
+	</attributelist>
+
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="th.fibonacci"/>
+		<seealso name="th.pell"/>
+		<seealso name="th.3bonacci"/>
+		<seealso name="th.nbonacci"/>
+		<seealso name="th.euclid"/>
+		<seealso name="th.linden"/>
+		<seealso name="js"/>
+		<seealso name="zl"/>
+		<seealso name="counter"/>
+		<seealso name="metro"/>
+		<seealso name="fromsymbol"/>
+	</seealsolist>
+</c74object>

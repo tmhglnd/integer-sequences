@@ -1,0 +1,44 @@
+{
+	"name" : "th.integersequences",
+	"displayname" : "",
+	"version" : "1.0.0",
+	"author" : "Timo Hoogland",
+	"authors" : [  ],
+	"description" : "Generate integer sequences such as the Fibonacci and Pell numbers. Integer sequences are very useful for algorithmic composition techniques, to generate rhythms, melodies, harmonies and more. The objects currently included are: th.fibonacci, th.pell, th.3bonacci",
+	"tags" : [ "sequences", "generative", "lists", "fibonacci", "pisano", "algorithmic", "composition"],
+	"website" : "http://www.gumroad.com/tmhglnd",
+	"extends" : "",
+	"extensible" : 0,
+	"max_version_min" : "7.3.5",
+	"max_version_max" : "none",
+	"os" : 	{
+		"macintosh" : 		{
+			"min_version" : "none",
+			"platform" : [ "x64" ]
+		}
+,
+		"windows" : 		{
+			"min_version" : "none",
+			"platform" : [ "x64" ]
+		}
+	}
+,
+	"homepatcher" : "intseq_introduction.maxpat",
+	"package_extra" : 	{
+		"reverse_domain" : "com.cycling74",
+		"copyright" : "Copyright (c) 2019 Timo Hoogland"
+	}
+,
+	"filelist" : 	{
+		"examples" : [],
+		"externals" : [],
+		"patchers" : [ "th.fibonacci.maxpat", "th.pell.maxpat", "th.3bonacci.maxpat" ],
+		"help" : [ "th.fibonacci.maxhelp", "th.pell.maxhelp", "th.3bonacci.maxhelp" ],
+		"docs" : [ "th.fibonacci.maxref.xml", "th.pell.maxref.xml", "th.3bonacci.maxref.xml" ],
+		"code" : [ "bignumber.js", "bignumber.license.txt", "math.integersequence.js" ],
+		"extras" : []
+	}
+,
+	"c74install" : 1,
+	"installdate" : 3638166346
+}
