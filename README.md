@@ -6,15 +6,15 @@ This package contains objects to generate integer sequences. Integer sequences a
 
 - **th.fibonacci**
 
-*OEIS: A000045*. An abstraction that generates the fibonacci sequence F(n) = F(n-1) + F(n-2). The ratio between consecutive numbers in the fibonacci sequence tends towards the Golden Ratio (1+√5)/2.
+*OEIS: A000045*. An abstraction that generates the fibonacci sequence `F(n) = F(n-1) + F(n-2)`. The ratio between consecutive numbers in the fibonacci sequence tends towards the Golden Ratio `(1+√5)/2`.
 
 - **th.pell**
 
-*OEIS: A000129*. An abstraction that generates the pell sequence F(n) = 2*F(n-1) + F(n-2). The ratio between consecutive numbers in the pell sequence tends towards the Silver Ratio 1 + √2.
+*OEIS: A000129*. An abstraction that generates the pell sequence `F(n) = 2*F(n-1) + F(n-2)`. The ratio between consecutive numbers in the pell sequence tends towards the Silver Ratio `1 + √2`.
 
 - **th.3bonacci**
 
-*OEIS: A006190*. An abstraction that generates the 3-bonacci sequence F(n) = 3*F(n-1) + F(n-2). The ratio between consecutive numbers in the 3-bonacci sequence tends towards the Bronze Ratio (3 + √13) / 2.
+*OEIS: A006190*. An abstraction that generates the 3-bonacci sequence `F(n) = 3*F(n-1) + F(n-2)`. The ratio between consecutive numbers in the 3-bonacci sequence tends towards the Bronze Ratio `(3 + √13) / 2`.
 
 - **bignumber.js**
 
