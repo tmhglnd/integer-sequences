@@ -1,5 +1,13 @@
 # integersequence package
 
+**Please consider to download and donate via http://gumroad.com/tmhglnd**
+
+**or become a patron on http://patreon.com/timohoogland**
+
+---
+
+## About
+
 This package contains objects to generate integer sequences. Integer sequences are very useful for algorithmic composition techniques, to generate rhythms, melodies, harmonies and more. Currently the package contains the objects listed below, but more integer sequence objects will be added in the future.
 
 ## Contains
